@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=940, initial-scale=1.0">
+		
+		<title>Steam Tags: The Game</title>
+		
+		<link rel="stylesheet" href="css/tags.css">
+		<link rel="image_src" href="img/meta.png">
+		<link rel="apple-touch-icon" sizes="512x512" href="img/meta.png">
+		
+		<meta name="twitter:card" content="summary">
+		<meta property="og:title" content="Steam Tags: The Game">
+		<meta property="og:site_name" content="Steam Tags: The Game">
+		<meta property="og:image" content="img/meta.png">
+		<meta property="og:type" content="website">
+		<meta property="og:description" content="You'll be shown a list of tags and a selection of games, you will have to guess which games these tags belong to!">
+		<meta name="description" content="You'll be shown a list of tags and a selection of games, you will have to guess which games these tags belong to!">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="container hidden" id="tags-window">
+				<h1 class="game-title">Which game matches these tags?</h1>
+				
+				<div id="tag-list">
+					<span class="label"></span>
+					<span class="label"></span>
+					<span class="label"></span>
+					<span class="label"></span>
+					<span class="label"></span>
+				</div>
+			</div>
+
+			<div class="container hidden" id="tags-selection">
+				<div id="game-list">
+					<a class="game" href="#"><img alt="Game" src="img/p.gif"></a>
+					<a class="game" href="#"><img alt="Game" src="img/p.gif"></a>
+					<a class="game" href="#"><img alt="Game" src="img/p.gif"></a>
+				</div>
+				
+				<div id="skip-btn-container">
+					<a id="btn-skip" class="btn game" data-appid="0" href="#">I don't know!</a>
+				</div>
+			</div>
+
+			<div class="container game-message" id="welcome-screen">
+				<h1 class="game-title">Steam Tags: The Game!</h1>
+				
+				<p>You'll be shown a list of tags and a selection of games.</p>
+				<p>Click the game you think the tags belong to.</p>
+				<p>You can press enter to continue.</p>
+				
+				<a class="btn btn-loadnew btn-disabled top-margin" id="play-now" href="#">Play!</a>
+			</div>
+			
+			<div class="container game-message hidden" id="win-message">
+				<h2>You chose:</h2>
+
+				<a class="game answer-game" target="_blank"><img alt="Game" src="img/p.gif"></a>
+				
+				<h2>Which is correct!</h2>
+				
+				<a class="btn btn-loadnew" href="#">Continue</a>
+			</div>
+			
+			<div class="container game-message hidden" id="answer-message">
+				<h2>The answer was:</h2>
+
+				<a class="game answer-game" target="_blank"><img alt="Game" src="img/p.gif"></a>
+				
+				<a class="btn btn-loadnew top-margin" href="#">Continue</a>
+			</div>
+			
+			<div class="container game-message hidden" id="lose-message">
+				<div class="lose-message-row">
+					<div class="lose-message-game-container">
+						<h2>You chose:</h2>
+						<a class="game chosen-game" target="_blank"><img alt="Game" src="img/p.gif"></a>
+					</div>
+					<div class="lose-message-game-container">
+						<h2>The correct answer was:</h2>
+						<a class="game answer-game" target="_blank"><img alt="Game" src="img/p.gif"></a>
+					</div>
+				</div>
+				<a class="btn btn-loadnew top-margin" href="#">Continue</a>
+			</div>
+			
+			<div class="footer-push"></div>
+		</div>
+		
+		<div class="container footer-container">
+			<div id="stats-container">
+				<div class="stat">Correct: <span id="stat-wins">0</span></div>
+				<div class="stat">Total: <span id="stat-total">0</span></div>
+				<div class="stat">Accuracy: <span id="stat-accuracy">0</span>%</div>
+				<div class="stat">Current Streak: <span id="stat-streak">0</span></div>
+				<div class="stat">Best Streak: <span id="stat-streak-best">0</span></div>
+				<div class="stat"><a id="reset-stats">Reset</a></div>
+			</div>
+			
+			<div class="footer">Created by <a target="_blank" href="//steamcommunity.com/id/Fiskie/">Fiskie</a> and <a target="_blank" href="//xpaw.me/">xPaw</a>. No cheating!</div>
+			
+			<div class="social">
+				<a class="share-button" href="https://plus.google.com/share?url=http%3A%2F%2Ftags.steamdb.info%2F" target="_blank"><img width="77" height="28" alt="Google+" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE0AAAAcCAMAAAATBcLQAAAAUVBMVEXeVUPeVUPeVUPeVUPeVUPeVUPeVUPeVUPeVUPeVUPeVUPeVUPeVUP////usavnjoXgZVb22tj99vblgXb55OL77ezyxcHjdGfspp/00M3pmpIdaFqRAAAADHRSTlNuuqXlVDCKBR1E9dMRM1juAAABJUlEQVRIx+2U246EIAyGUUFgBiigiPr+D7qtZjUQvZjMXmwmQyJtOXz+UICZvyxf2ifTnowrqXps6t6nNQI/2aOnn/Ug8K/SBHlaGoYCVTXIwqs0SV4vH5u2t2laUaSx4ue+ZedmTzR00Jphjw2gh8bDcEPrlGhbXXbmmMLokDbZkBJhQ4ij3xuMmbEVo+sT0nBZZdONu7U4x8cZxRiyREMvW1Q2TRXt9CUraXN0+di34GipAJtY2P4FAC5e03rGhNS1OJuGkzakhEs9aDFQuaI9RIt1W6szeYonbVnIHrR0m1POd4HFUVtXnFPQvHf2l+bj5DG3VzS108qsrtFaO5+0AeNl2WhH9yWtlw0ZUZ1cKC+Vh1x339xTjoV1//NF+tI+hfYDblRmsZiOL+UAAAAASUVORK5CYII="></a>
+				<a class="share-button" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Ftags.steamdb.info%2F" target="_blank"><img width="76" height="28" alt="Facebook" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAAAcCAMAAAD8x6nuAAAARVBMVEUAAAA0YKE0YKE0YKE0YKE0YKE0YKE0YKE0YKE0YKH///+ottF+lL1KbqjW3Oj19/mVp8huiLbh5e7r7vRdfK+/ydzL0+JE4RoJAAAACnRSTlMAoIz/kOd1IxHNVtJ4pwAAAOZJREFUSMft1FcOwjAMANBACgSP7PT+R8VGUIoqpID6Aaj+ceZTnA5jV4wN+1/s6Jw7rIQdjcR5uYj4A+xkzH5nlwH0GaZpDewwOGOGYT5bESMrJg0tNUlfM0lLElN6hZ3NNeZWKD6jYA18Kap6H7JmBG9tlNHMvRjmW5myhUOUo1jNqkurgpyrtd47iwHrdGcetU6ijLcBzESEoRPT9VDSA0ulSJ0TFrzGG0+ztvDAxlHzhJW3Xo0YZcsTxoxwxzg0tgn77wwA4qxM6Y/jFZumsb9Mev6SmOpi+iXmnP3SX9CG/TZ2AWDoIT4gPPHuAAAAAElFTkSuQmCC"></a>
+				<a class="share-button" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Ftags.steamdb.info%2F&amp;text=Steam+Tags%3A+The+Game" target="_blank"><img width="76" height="28" alt="Twitter" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEwAAAAcCAMAAAD8x6nuAAAATlBMVEUAAAAoquEoquEoquEoquEoquEoquEoquEoquEoquEoquHU6vf///95w+mk1O9Wt+Vovef1+v1BsOPg8PmWz+293/OIyevq9fux2vHJ5fWDr0/eAAAACnRSTlMA0bEb7QkzYnua3U+rVAAAAS9JREFUSMftlOtugzAMhVNaGjhx7hfg/V90DmJ0paBN6v5U4ghiOZE/jkkUgX/UCTthf4T1sgNub8IuzGB1Qojr/V1YI+ScVl0v63LCLwplB3ZrRSubZoZ162qO2kEHrnGcOcuD1phldc1CzBxf2pRiVb/6GrwaMRjAEBN9gvMx+grOXvkMjH5Q6dWZeOjRpVHggghEKigMZDB/or6BXTFGmb3d7Ntv1hXPMEvB0pjBjyPNIocpc8zTEex2X7vcwBCTmZzHUKBJVTmoocbxCIZusXbHFmbylDAkD3ZmUcXO5nAIQ9NuWTARXG09BYw+19poYQ3YIg+lAOxubzfnNtsOP+U8TRyi4koqdSISEWcwHD3PJCKz8896KWWPjawOeJZbzlXQesk/8dY4YZ8M+wLyNVTFpA1g9wAAAABJRU5ErkJggg=="></a>
+				<iframe class="share-button" scrolling="no" frameborder="no" src="//api.flattr.com/button/view/?uid=SteamDB&amp;button=compact&amp;url=http%3A%2F%2Ftags.steamdb.info%2F" height="28" width="110" title="Flattr"></iframe>
+			</div>
+		</div>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+		<script src="js/tags.js"></script>
+	</body>
+</html>

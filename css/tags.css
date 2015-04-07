@@ -1,0 +1,254 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 1.428571429;
+	color: #EEE;
+	margin: 0;
+
+	background: #000; /* Old browsers */
+	background: -moz-linear-gradient(left,  #000 0%, #333 25%, #333 75%, #000 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#000), color-stop(25%,#333), color-stop(75%,#333), color-stop(100%,#000)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #000 0%,#333 25%,#333 75%,#000 100%); /* Chrome10+,Safari5.1+ */
+	background: linear-gradient(to right,  #000 0%,#333 25%,#333 75%,#000 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000',GradientType=1 ); /* IE6-8 */
+}
+
+a {
+	background: transparent;
+}
+
+a:active,
+a:hover {
+	outline: 0;
+}
+
+.hidden {
+	display: none;
+}
+
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin-bottom: -110px;
+}
+
+.footer-push {
+	height: 110px;
+}
+
+.footer-container {
+	padding: 10px 0;
+}
+
+.footer-container a {
+	text-decoration: none;
+	color: #CCC;
+	cursor: pointer;
+}
+
+.footer-container a:hover {
+	text-decoration: underline;
+	color: #FFF;
+}
+
+.social, .footer {
+	margin-top: 10px;
+}
+
+.game-title {
+	margin: 0;
+	padding: 48px 0;
+	display: block;
+	text-align: center;
+	color: #fff;
+	font-weight: bold;
+	letter-spacing: -1px;
+	font-size: 55px;
+	text-shadow: 1px 1px 0 #000;
+}
+
+#welcome-screen {
+	font-size: 16px;
+}
+
+#game-list {
+	margin-bottom: 16px;
+}
+
+.lose-message-game-container {
+	width: 316px;
+	display: inline-block;
+}
+
+.lose-message-game-container > h2 {
+	margin-top: 0px;
+}
+
+.container {
+	text-align:center;
+	width: 960px;
+	margin: 0 auto;
+}
+
+#stats-container {
+	text-transform: uppercase;
+	font-size: 12px;
+	color: #AAA;
+}
+
+.stat {
+	display: inline;
+	padding-left: 9px;
+	padding-right: 10px;
+	border-right:1px solid #999;
+}
+
+.stat:last-child {
+	border-right:none;
+}
+
+#tag-list {
+	font-size: 24px;
+	margin-bottom: 64px;
+}
+
+.label {
+	display: inline;
+	padding: .2em .6em .3em;
+	font-weight: 700;
+	line-height: 2;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: baseline;
+	border-radius: .25em;
+	background-color: #526d95;
+	color: #fff;
+}
+
+.btn {
+	text-decoration: none;
+	display: inline-block;
+	font-weight: 400;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	border: 1px solid #526d95;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.428571429;
+	border-radius: 4px;
+	color: #fff;
+	background-color: #526d95;
+	box-shadow: 1px 1px 0 0 #000;
+}
+
+.btn:hover {
+	background-color: #627da5;
+	border-color: #627da5;
+}
+
+.btn:active, .btn:focus {
+	background-color: #425d85;
+	border-color: #425d85;
+}
+
+.btn-disabled, .btn-disabled:hover {
+	background-color: #555;
+	border-color: #444;
+	color: #AAA;
+	cursor: default;
+}
+
+.game > img {
+	width: 292px;
+	height: 136px;
+	background-color: #444;
+	color: #2A6496;
+	display: inline-block;
+	border: 1px solid #222;
+	border-radius: 4px;
+	padding: 4px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.game > img:hover {
+	background-color: #555;
+}
+
+.game > img:active, .game > img:focus {
+	background-color: #373737;
+}
+
+img[alt] {
+	color: #FFF;
+}
+
+.answer-game {
+	display:block;
+	width: 302px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.top-margin {
+	margin-top: 20px;
+}
+
+@media screen and (max-width: 960px) {
+	.container {
+		width: 100%;
+	}
+	
+	body {
+		min-width: 400px;
+		padding: 0 15px;
+	}
+	
+	.game > img {
+		height: 87px;
+		width: 231px;
+	}
+}
+
+@media screen and (max-width: 780px) {
+	.game > img {
+		width: 184px;
+		height: 69px;
+	}
+	
+	.game-title {
+		font-size: 40px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	a.game {
+		display: block;
+		margin-bottom: 10px;
+	}
+	
+	.game > img {
+		height: 87px;
+		width: 231px;
+	}
+	
+	.game-title {
+		font-size: 30px;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	body {
+		padding: 0;
+	}
+	
+	.game-title {
+		font-size: 25px;
+	}
+}
